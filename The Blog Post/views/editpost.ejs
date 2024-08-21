@@ -1,0 +1,98 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/header.ejs")%>
+
+
+
+
+
+        
+
+
+
+
+
+  <form action="/confirm/<%=posttobeedited.postid%>" method="POST">
+
+
+    <div class="page-heading mb-5 mt-4 pr-5">
+
+      <%if (edit==true){%>
+        <h1>Edit Post</h1>
+        <% }else{ %>
+        <h1>New Post</h1>
+        <span class="subheading"
+          >You're going to make a great blog post!</span
+        >
+        <%}%>
+     
+    </div>
+    
+
+    <div class="form-floating py-2">  
+      <input type="text" id="title" name="title"  value="<%=posttobeedited.title%>" required>
+      <label for="exampleFormControlTextarea1" class="form-label" >Title  </label>   
+    </div>
+
+
+
+    <div class="form-floating py-2">    
+       <input type="text" id="subtitle" name="subtitle" value="<%=posttobeedited.subtitle%>" required>
+        <label for="exampleFormControlTextarea1" class="form-label" >Sub Title</label>  
+    </div>
+
+
+
+
+    <div class="mb-3 py-2">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" rows="3" name="description"><%=posttobeedited.description%></textarea>   
+    </div>
+
+
+
+
+
+    <div class="form-floating py-2">
+      <input type="text" id="image" name="image" value="<%=posttobeedited.image%>" required> 
+      <label for="floatingPassword" class="form-label" >Image URL</label>
+    </div>
+
+
+  <button class="btn btn-success w-100 py-2" type="submit" value="Submit">Submit</button>
+</form>
+
+
+
+
+    
+
+
+  
+
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+<%- include("partials/footer.ejs")%>

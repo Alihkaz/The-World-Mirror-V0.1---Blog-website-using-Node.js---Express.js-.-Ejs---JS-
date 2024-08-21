@@ -1,0 +1,67 @@
+
+<%- include("partials/header.ejs")%>
+
+
+
+<!-- Page Header-->
+<header
+  class="masthead mb-5"
+  style="background-image: url('images/wallp.jpeg')"
+  
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1 style="color: white;">The World Mirror</h1>
+          <span class="subheading" style="color: white;">New Post Every Time You Make Coffe!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+
+      
+      <!-- Post preview-->
+      <% if(locals.postsTable){%>
+        <% for(let i=0 ; i<postsTable.length ;i++){ %>
+        <div class="post-preview">
+            <a href="/viewpost/<%= postsTable[i].postid %>">
+            <h2 class="post-title"><%= postsTable[i].title %></h2>
+            <h5 class="post-subtitle"><%= postsTable[i].subtitle %></h3>
+          </a>
+      </div>
+       <!-- Divider-->
+       <hr class="my-4" />
+      <%}%>
+      <%}%>
+      
+     
+   
+
+      
+      <!-- create Post -->
+      <div class="d-flex justify-content-end mb-4">
+        <a
+          class="btn btn-primary float-right"
+          href="/createpost"
+          >Create New Post</a>
+      </div>
+     
+
+     
+      
+    </div>
+  </div>
+</div>
+
+
+
+<%- include("partials/footer.ejs")%>

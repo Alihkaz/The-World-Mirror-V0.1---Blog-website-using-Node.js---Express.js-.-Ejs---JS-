@@ -1,0 +1,62 @@
+
+
+
+
+
+<%- include("partials/header.ejs")%>
+
+
+
+
+
+
+
+
+
+<!-- Page Header-->
+<header class="masthead">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="post-heading ">
+            <h2><%= posttobeviewed.title %></h3>
+            <h5 class="subheading"><%= posttobeviewed.subtitle %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Post Content -->
+  <article>
+    <div class="container px-4 px-lg-5 py-3">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <%= posttobeviewed.description %>
+          <div class=" justify-content-end mb-4 mt-4 py-3 ">
+            <div class="mb-2">
+            <a
+              class="btn btn-success w-100 py-2"
+              
+              href="/editpost/<%= posttobeviewed.postid %>"
+              >Edit Post</a
+            >
+          </div>
+            <a
+            class="btn btn-danger w-100 py-2"
+            
+            href="/deletepost/<%=posttobeviewed.postid%>"
+            >✘</a
+          >
+          </div>
+         
+  
+         
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+<%- include("partials/footer.ejs")%>
+
